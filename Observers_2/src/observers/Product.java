@@ -1,3 +1,4 @@
+//Product: this is the Observable
 package observers;
 
 import java.util.Observable;
@@ -8,12 +9,24 @@ public class Product extends Observable
 	private boolean isAvailable = false;
 	private String size = "";
 	private String colour = "";
+	private String name = "";
 
-	public Product(boolean isAvailable, String size, String colour)
+	public Product(boolean isAvailable, String size, String colour, String name)
 	{
+		this.name = name;
 		this.isAvailable = isAvailable;
 		this.size = size;
 		this.colour = colour;
+	}
+
+	public String getName()
+	{
+		return name;
+	}
+
+	public void setName(String name)
+	{
+		this.name = name;
 	}
 
 	public boolean isAvailable()
@@ -46,7 +59,7 @@ public class Product extends Observable
 	}
 	@Override
 	public String toString(){
-		return String.format("Product is: %s; Size: %s; Colour: %s. ", this.isAvailable() ? "available" : "not available",  this.getSize(), this.getColour());
+		return String.format("Product is: %s; Availability: %s; Size: %s; Colour: %s. ", this.getName(), this.isAvailable() ? "available" : "not available",  this.getSize(), this.getColour());
 	}
 
 }
