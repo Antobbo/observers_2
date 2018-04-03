@@ -42,6 +42,7 @@ public class ObserverTest
             for(Observer user : users){
                 currentProduct.addObserver(user);
             }
+
             currentProduct.setAvailable(true);
         }
 
